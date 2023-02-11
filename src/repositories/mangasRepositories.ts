@@ -1,4 +1,4 @@
-import { connectionDB } from "../database/db";
+import { connectionDB } from "../database/db.js";
 
 export async function postingManga(manga){
     const { name, image, description, chapters, score } = manga

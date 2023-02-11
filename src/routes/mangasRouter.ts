@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { deleteManga, getMangas, getOneManga, postManga, updateManga } from "../controllers";
+import { deleteManga, getMangas, getOneManga, postManga, updateManga } from "../controllers/mangasControllers.js";
+
 
 const mangasRouter = Router();
 
