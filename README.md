@@ -9,6 +9,9 @@
 
 ## 1 - Clone this repository
 
+```bash
+git clone git@github.com:HugoNicolau/MyMangaList.git
+```
 > **Dont forget to star it :D**
 
 ## 2 - Install the dependencies
