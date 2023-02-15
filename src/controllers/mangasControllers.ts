@@ -8,8 +8,8 @@ import { Manga } from "../types/types.js";
 export async function postManga(req:Request, res:Response){
     const manga:Manga = req.body
     try{
-        const posted = await postingManga(manga);
-        return res.status(httpStatus.OK).send(posted);
+        await postingManga(manga);
+        return res.sendStatus(httpStatus.OK);
 
     }   catch(err){
         return res.status(httpStatus.BAD_REQUEST);
@@ -19,7 +19,7 @@ export async function postManga(req:Request, res:Response){
 export async function getMangas(req:Request, res:Response){
     try{
         const mangas = await getAllMangas();
-        return res.status(httpStatus.OK).send(mangas);
+        return res.status(httpStatus.OK).send(mangas.rows);
 
     }   catch(err){
         return res.status(httpStatus.BAD_REQUEST);
