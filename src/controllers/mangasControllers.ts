@@ -27,9 +27,10 @@ export async function getMangas(req:Request, res:Response){
 }
 export async function getOneManga(req:Request, res:Response){
     const name = req.params.name
+   
     try{
         const manga = await getOnlyOneManga(name);
-        return res.status(httpStatus.OK).send(manga);
+        return res.status(httpStatus.OK).send(manga.rows);
 
     }   catch(err){
         return res.status(httpStatus.BAD_REQUEST);

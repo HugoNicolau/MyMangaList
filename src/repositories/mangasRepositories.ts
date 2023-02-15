@@ -11,7 +11,7 @@ export async function getAllMangas(){
 }
 
 export async function getOnlyOneManga(name: string){
-    return await connectionDB.query('SELECT * FROM mangas WHERE name=$1',[name]);
+    return await connectionDB.query('SELECT * FROM mangas WHERE name ILIKE($1)',[`%${name}%`]);
 }
 
 export async function updateOneManga(manga: Manga){
