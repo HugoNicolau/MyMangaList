@@ -40,7 +40,7 @@ export async function updateManga(req:Request, res:Response){
     const manga = req.body
     try{
         const newManga = await updateOneManga(manga);
-        return res.status(httpStatus.OK).send(newManga);
+        return res.sendStatus(httpStatus.OK);
 
     }   catch(err){
         return res.status(httpStatus.BAD_REQUEST);
