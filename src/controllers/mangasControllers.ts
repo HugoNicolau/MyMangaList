@@ -48,10 +48,10 @@ export async function updateManga(req:Request, res:Response){
 }
 
 export async function deleteManga(req:Request, res:Response){
-    const manga = req.body
+    const id = req.params.id
     try{
-        const deleted = await deleteOneManga(manga);
-        return res.status(httpStatus.OK).send(deleted);
+        const deleted = await deleteOneManga(id);
+        return res.sendStatus(httpStatus.OK);
 
     }   catch(err){
         return res.status(httpStatus.BAD_REQUEST);

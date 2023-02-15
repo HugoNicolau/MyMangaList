@@ -19,6 +19,6 @@ export async function updateOneManga(manga: Manga){
     return await connectionDB.query('UPDATE mangas SET name=$1, image=$2, description=$3, chapters=$4, score=$5 WHERE id=$6',[name, image, description, chapters, score, id])
 }
 
-export async function deleteOneManga(manga: Manga){
-    return await connectionDB.query('DELETE FROM mangas WHERE id=$1',[manga.id]);
+export async function deleteOneManga(id:string){
+    return await connectionDB.query('DELETE FROM mangas WHERE id=$1',[id]);
 }
