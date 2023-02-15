@@ -7,7 +7,7 @@ const mangasRouter = Router();
 
     mangasRouter.post("/mangas", postManga);
     mangasRouter.get("/mangas",getMangas);
-    mangasRouter.get("/mangas/:id",getOneManga);
+    mangasRouter.get("/mangas/:name",getOneManga);
     mangasRouter.patch("/manga/:id", updateManga)
     mangasRouter.delete("/mangas/:id", deleteManga);
 

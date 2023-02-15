@@ -1,6 +1,6 @@
 import httpStatus from "http-status";
 import { Request, Response } from "express";
-import { postingManga, getAllMangas, updateOneManga, deleteOneManga} from "../repositories/mangasRepositories.js";
+import { postingManga, getAllMangas, getOnlyOneManga, updateOneManga, deleteOneManga} from "../repositories/mangasRepositories.js";
 import { Manga } from "../types/types.js";
 
 
@@ -26,9 +26,9 @@ export async function getMangas(req:Request, res:Response){
     }
 }
 export async function getOneManga(req:Request, res:Response){
-    const { name } = req.body
+    const name = req.params.name
     try{
-        const manga = await postingManga(name);
+        const manga = await getOnlyOneManga(name);
         return res.status(httpStatus.OK).send(manga);
 
     }   catch(err){

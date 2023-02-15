@@ -10,7 +10,7 @@ export async function getAllMangas(){
     return await connectionDB.query('SELECT * FROM mangas')
 }
 
-export async function getOneManga(name: string){
+export async function getOnlyOneManga(name: string){
     return await connectionDB.query('SELECT * FROM mangas WHERE name=$1',[name]);
 }
 
